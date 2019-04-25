@@ -167,6 +167,12 @@ res = clf.predict(test_set)
 print('error:',1-np.mean(res==np.ravel(test_label)))#错误率
 
   
-
+#各特征的重要度
+import matplotlib.pyplot as plt 
+fea_ = clf.feature_importances_
+fea_name = clf.feature_names_
+plt.figure(figsize=(10, 10))
+plt.barh(fea_name,fea_,height =0.5)
+plt.show()
 
 
